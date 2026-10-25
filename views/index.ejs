@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css"></link>
+    <title>Pocket Watcher</title>
+</head>
+<body>
+    <header>
+        <h1>Pocket Watcher 👀</h1>
+    </header>
+    <section>
+        <section class="h2Section">
+            <h2>Track all of your subscription services in one place! Just add a subscription that you have, and we'll watch your pockets for you.</h2>
+            <p><i class="fa-solid fa-right-from-bracket"></i><a href="/logout" class="btn btn-default btn-sm">Logout</a></p>
+        </section>
+        <section class="parentSection">
+        <section class="formSection">
+            <form action="/subbies" method="POST">
+                    <!-- string inside of the vlaue must exactly match the enum array strings or the session can't be saved to the databser -->
+                <h3>Service: </h3><input type="text" name="service" placeholder="ex. Netflix" required></input>
+                <h3>Payment Cycle: </h3><label><input type="radio" name="paymentCycle" value="monthly">Monthly</label><label><input type="radio" name="paymentCycle" value="yearly">Yearly</label>
+                <h3>Price(per Month or Year): $</h3><input type="number" name="price" min="0" step="0.01" placeholder="14.99" required></input>
+                <h3>Payment Date: </h3><input type="date" name="paymentDate" required></input><br></br>
+                <button type="submit">Add</button>
+                <h5>If the price has changed, or you've paused a subscription. Edit the field and press the save button. <br></br>
+                    If you've cancelled a subscription, you can go ahead and hit the trash button.
+                </h5>
+            </form>
+        </section>
+        <section class="subscriptionsLog"> 
+            <% for(let i = 0; i < subby.length; i++) {%>
+            <section class="subby">
+                <img src="<%= subby[i].logo %>" class="logo">
+            
+                <h4><%= subby[i].service %></h4>
+                <h4><span>Payment Cycle: </span> <%= subby[i].paymentCycle %></h4>
+                <h4><span>Price: <span id="dollar">$</span></span> <input type="number" min="0" class="price" id="price-<%= subby[i]._id %>" value="<%= subby[i].price %>"></h4>
+                <h4><span>Next Payment:</span> <%= subby[i].paymentDate.toLocaleDateString('en-US', {timeZone: 'UTC', month: 'short', day: 'numeric', year: 'numeric'}) %></h4>
+                <h4><span>Active:</span> <input type="checkbox" id="status-<%= subby[i]._id %>" <%= subby[i].status ? 'checked' : '' %>></input></h4>
+
+                <button class="editSave" data-edit-save-id="<%= subby[i]._id %>"><i class="fa-regular fa-floppy-disk" aria-hidden="true"></i></button>
+                <button class="trash" data-trash-id="<%= subby[i]._id %>"><i class="fa-solid fa-trash-can" aria-hidden="true"></i></button>
+            </section>
+            <% } %>
+        </section>
+        </section>
+    </section>
+    <script src="https://kit.fontawesome.com/d64fd93eee.js" crossorigin="anonymous"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>

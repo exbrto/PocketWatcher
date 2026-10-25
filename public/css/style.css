@@ -1,0 +1,112 @@
+header{
+    background: #f0dca5;
+    padding: .5rem 7.5%;
+    color: #000;
+    backdrop-filter: blur(10px);
+}
+body{
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: 62.5%;
+    background: #0b4a3a;
+    min-height: 100vh;
+    background-attachment: fixed;
+    color: #f2f7f4;
+    margin: 0;
+    font-family: 'Roboto Condensed', 'Helvetica', sans-serif;
+}
+header + section{
+    padding: 3vh 7.5%;
+}
+.h2Section{
+    border: 1px solid #000;
+    border-radius: 15px;
+    padding: 1.5rem;
+    background: #f7f3e8;
+    color: #000;
+    margin-bottom: 5px;
+    text-align: center;
+}
+.logo{
+    width: 65px;
+    height: 65px;
+    padding: 1.5rem 1rem 0 1.5rem;
+}
+.parentSection{
+    display: flex;
+    justify-content: space-between;
+    /* padding: 3vh 7.5%; */
+}
+.formSection{
+    background: #f7f3e8;
+    max-width: 20%;
+    border: 2px solid #000;
+    border-radius: 15px;
+    color: #000;
+    padding: 1rem 1%;
+    max-height: 62vh;
+}
+.subscriptionsLog{
+    min-width: 77%;
+}
+.subby{
+    border: 2px solid #000;
+    border-radius: 15px;
+    background: #f7f3e8;
+    color: #000;
+    padding: 0 1%;
+    margin-bottom: 5px;
+}
+h1{
+    font-size: 2.8rem;
+}
+h2{
+    font-size: 1.6rem;
+}
+h3, p, a{
+    font-size: 1.2rem;
+}
+input {
+    font-size: 1.2rem;
+    text-indent: 5px;
+}
+#dollar{
+    font-size: 1.2rem;
+    margin-right: 0;
+    word-spacing: 0;
+}
+h4{
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: normal;
+}
+h5{
+    font-size: 1rem;
+}
+span{
+    display: inline-block;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-left: 10px;
+}
+.price{
+    min-width: 3rem;
+    max-width: 6rem;
+    border: 1px solid #f7f3e8;
+    background: #f7f3e8;
+}
+label{
+    font-size: 1rem;
+}
+.loginInfo{
+    font-size: 1.4rem;
+}
+a, button{
+    border: 1px solid;
+    border-radius: 10px;
+    text-decoration: none;
+    background: #0b4a3a;
+    color: #f0dca5;
+    padding: 10px 15px;
+    font-size: 1rem;
+}
