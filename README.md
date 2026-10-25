@@ -68,7 +68,7 @@ Replace the placeholders with your own database connection details and a secret 
 node server.js
 ```
 
-The app runs on port `8000` by default.
+The app runs on port `8080` by default.
 
 ## Usage
 
