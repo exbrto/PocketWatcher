@@ -44,7 +44,8 @@ header + section{
     border-radius: 15px;
     color: #000;
     padding: 1rem 1%;
-    max-height: 62vh;
+    min-height: 62vh;
+    max-height: 70vh;
 }
 .subscriptionsLog{
     min-width: 77%;
